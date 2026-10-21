@@ -4,14 +4,13 @@
 
 它不是实时排队系统，也不是官方导航。页面中的机台数量、营业时间、票价、路线、口岸安排和人气值均为公开资料整理后的参考信息，出发前仍应以机厅现场、官方交通/口岸信息和地图软件为准。
 
-当前版本：`v1.1.15`
+当前版本：`v1.2.0`
 
 当前工程状态：
 
-- `outputs/site` 当前提交：`a704c68`
-- `outputs/site` Git 历史：截至 `a704c68` 共 41 条提交
-- 数据生成日期：`2026-06-17`
-- 当前统计：21 间机厅、7 个起点
+- `outputs/site` 当前提交：以 `main` 最新提交为准
+- 数据生成日期：`2026-10-22`
+- 当前统计：21 间机厅、8 个起点
 - 当前机种覆盖：maimaiDX 20 间、CHUNITHM 13 间、beatmania IIDX 4 间、SOUND VOLTEX 4 间
 
 ## 公开地址
@@ -51,11 +50,12 @@ Google 地图链接使用店名 + 地区 + 地址 + 香港生成搜索查询，�
 
 ### 出行路线与推荐
 
-当前支持 7 个起点：
+当前支持 8 个起点：
 
 - 西九龙高铁站 / 高铁西九龙口岸
 - 罗湖口岸
 - 落马洲支线 / 福田口岸
+- 皇岗口岸（新口岸）
 - 深圳湾口岸
 - 香园围 / 莲塘口岸
 - 港珠澳大桥香港口岸
@@ -101,7 +101,9 @@ Google 地图链接使用店名 + 地区 + 地址 + 香港生成搜索查询，�
 - 公开巴士票价参考资料
 - 公开社群和店铺备注
 
-当前数据生成于 `2026-06-17`。机厅、机台、营业时间、路线和价格都有时效性，需要周期刷新。
+当前数据生成于 `2026-10-22`。机厅、机台、营业时间、路线和价格都有时效性，需要周期刷新。
+
+皇岗口岸数据按运输署及入境处公开资料更新：皇岗口岸 24 小时运作，港方口岸区设有公共运输交汇处；本页路线模型暂以 B10 至青衣站接驳港铁作为代表方案，实际仍可选择 B11、B12、B13、B14、B15、NB73、专线小巴或跨境巴士。
 
 人气值是固定的公开社群热度指标，来源于 BEMANI CN 收藏数、目标机台数量、更新时间和双来源核验等信号加权。它不代表实时排队人数、实时客流或现场拥挤程度。
 
@@ -224,14 +226,13 @@ Hong Kong Otoge CheckMaiWay is a public arcade rhythm game map and cross-border 
 
 It is not a real-time queue system and it is not an official navigation product. Machine counts, opening hours, fares, routes, checkpoint arrangements, and popularity scores are reference data only. Always verify with the arcade, official transport/checkpoint information, and map apps before travelling.
 
-Current version: `v1.1.15`
+Current version: `v1.2.0`
 
 Current project state:
 
-- `outputs/site` current commit: `a704c68`
-- `outputs/site` Git history: 41 commits through `a704c68`
-- Data generated on: `2026-06-17`
-- Current dataset: 21 arcades and 7 origins
+- `outputs/site` current commit: latest `main`
+- Data generated on: `2026-10-22`
+- Current dataset: 21 arcades and 8 origins
 - Current game coverage: 20 maimaiDX arcades, 13 CHUNITHM arcades, 4 IIDX arcades, 4 SOUND VOLTEX arcades
 
 ## Live Sites
@@ -276,6 +277,7 @@ Supported origins:
 - Hong Kong West Kowloon Station / West Kowloon Control Point
 - Lo Wu Control Point
 - Lok Ma Chau Spur Line / Futian Control Point
+- Huanggang Port (new co-location port)
 - Shenzhen Bay Control Point
 - Heung Yuen Wai / Liantang Control Point
 - Hong Kong-Zhuhai-Macao Bridge Hong Kong Port
@@ -321,7 +323,9 @@ Main sources:
 - Public bus fare references
 - Public community and arcade notes
 
-The current data was generated on `2026-06-17`. Arcades, machine counts, opening hours, transport fares, and routes can become stale and should be refreshed periodically.
+The current data was generated on `2026-10-22`. Arcades, machine counts, opening hours, transport fares, and routes can become stale and should be refreshed periodically.
+
+Huanggang Port is updated from public Transport Department and Immigration Department information: the port operates 24 hours and the Hong Kong Port Area has a public transport interchange. The current route model uses B10 to Tsing Yi Station as the representative rail connection; travellers may also use B11, B12, B13, B14, B15, NB73, green minibus routes, or cross-boundary coaches.
 
 Popularity is a fixed public-community heat score. It is derived from signals such as BEMANI CN favorites, target machine counts, update recency, and cross-source verification. It does not represent live queue length, real-time crowding, or current foot traffic.
 
