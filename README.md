@@ -4,7 +4,7 @@
 
 它不是实时排队系统，也不是官方导航。页面中的机台数量、营业时间、票价、路线、口岸安排和人气值均为公开资料整理后的参考信息，出发前仍应以机厅现场、官方交通/口岸信息和地图软件为准。
 
-当前版本：`v1.2.0`
+当前版本：`v1.2.1`
 
 当前工程状态：
 
@@ -226,7 +226,7 @@ Hong Kong Otoge CheckMaiWay is a public arcade rhythm game map and cross-border 
 
 It is not a real-time queue system and it is not an official navigation product. Machine counts, opening hours, fares, routes, checkpoint arrangements, and popularity scores are reference data only. Always verify with the arcade, official transport/checkpoint information, and map apps before travelling.
 
-Current version: `v1.2.0`
+Current version: `v1.2.1`
 
 Current project state:
 
