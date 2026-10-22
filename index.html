@@ -63,6 +63,33 @@ body.dark .limit-card{border-color:rgba(255,255,255,.18)}
 .card{display:flex;flex-direction:column;overflow:hidden;padding:12px 12px 0}.links{display:flex;gap:0;flex-wrap:wrap;justify-content:flex-start;align-items:stretch;margin:10px -12px 0;padding:7px 10px 9px;background:linear-gradient(90deg,#111827,#1f2937);border-top:1px solid rgba(15,23,42,.18);box-shadow:inset 0 1px 0 rgba(255,255,255,.10);font-size:12px}.links a,.favbtn{display:inline-flex;align-items:center;justify-content:center;min-height:30px;border:1px solid rgba(255,255,255,.14);border-radius:0;padding:6px 9px;font-size:12px;font-weight:800;line-height:1.05;text-decoration:none;cursor:pointer;box-shadow:inset 0 1px 0 rgba(255,255,255,.20)}.favbtn{gap:4px;margin-right:8px;border-radius:999px;background:linear-gradient(180deg,#fde68a,#f59e0b);border:2px solid #facc15;color:#231300;text-shadow:0 1px 0 rgba(255,255,255,.45);box-shadow:0 0 0 2px rgba(250,204,21,.16),0 0 16px rgba(250,204,21,.32),inset 0 1px 0 rgba(255,255,255,.55)}.favbtn::before{content:"★";font-size:12px}.favbtn.active{background:linear-gradient(180deg,#f97316,#9a3412);border-color:#fed7aa;color:#fff;text-shadow:none}.linkbtn.apple{background:#1d4ed8;color:#eff6ff}.linkbtn.google{background:#047857;color:#ecfdf5}.linkbtn.bemani{background:#0f766e;color:#f0fdfa}.linkbtn.ziv{background:#6d28d9;color:#f5f3ff}.links a:hover,.favbtn:hover{text-decoration:none;filter:brightness(1.08)}body.dark .links{background:linear-gradient(90deg,#020617,#0f172a);border-top-color:#1f2937}body.dark .favbtn{background:linear-gradient(180deg,#fde047,#ca8a04);border-color:#facc15;color:#171100}body.dark .favbtn.active{background:linear-gradient(180deg,#f97316,#7c2d12);color:#fff}body.dark .linkbtn.apple{background:#1e40af;color:#dbeafe}body.dark .linkbtn.google{background:#047857;color:#dcfce7}body.dark .linkbtn.bemani{background:#0f766e;color:#ccfbf1}body.dark .linkbtn.ziv{background:#5b21b6;color:#ede9fe}@media (max-width: 860px){.name-row{gap:5px}.hours-badge{font-size:10px;padding:3px 5px}.card{padding:10px 10px 0}.links{margin:9px -10px 0;padding:7px 8px 8px}.links a,.favbtn{min-height:29px;padding:6px 8px;font-size:11px}.favbtn{margin-right:6px}}
 .card.recommended{border-color:#22c55e;box-shadow:0 0 0 2px rgba(34,197,94,.20),0 0 22px rgba(34,197,94,.22)}.card.recommended::before{content:"";position:absolute;inset:-4px;border:2px solid rgba(34,197,94,.86);border-radius:12px;pointer-events:none;animation:recommendPulse 1.45s ease-in-out infinite}.card.selected.recommended::before{inset:-6px;border-color:rgba(34,197,94,.9)}@keyframes recommendPulse{0%,100%{opacity:.38;box-shadow:0 0 0 0 rgba(34,197,94,.20)}50%{opacity:1;box-shadow:0 0 0 5px rgba(34,197,94,.22),0 0 24px rgba(34,197,94,.36)}}.recommend-badge{display:inline-flex;align-items:center;border-radius:999px;padding:4px 7px;font-size:11px;font-weight:950;line-height:1.05;border:1px solid rgba(255,255,255,.68);box-shadow:0 2px 8px rgba(15,23,42,.16)}.recommend-badge.nearest{background:#22c55e;color:#052e16}.recommend-badge.cheapest{background:#dcfce7;color:#14532d;border-color:#86efac}.recommend-line{font-size:12px;color:#166534;font-weight:850;margin-top:7px;line-height:1.35}body.dark .card.recommended{border-color:#22c55e;box-shadow:0 0 0 2px rgba(34,197,94,.24),0 0 24px rgba(34,197,94,.28)}body.dark .recommend-line{color:#86efac}@media (max-width: 860px){.recommend-badge{font-size:10px;padding:4px 6px}.recommend-line{font-size:11px}}
 </style>
+<style id="layout-optimizations">
+.app{grid-template-columns:minmax(340px,400px) 1fr}
+.map-size-toggle{display:none}
+@media (min-width: 861px){
+.topbar{padding:10px 76px 10px 14px;gap:10px}
+.title h1{font-size:18px}
+.title p{font-size:11px}
+.stats{gap:6px}
+.stat{padding:6px 8px}
+.panel{padding:11px;margin-bottom:10px}
+.map-size-toggle{display:inline-flex;align-items:center;justify-content:center;position:absolute;left:12px;bottom:12px;z-index:700;min-width:76px;height:34px;padding:0 12px;border:1px solid rgba(15,23,42,.16);border-radius:999px;background:rgba(255,255,255,.86);color:#0f172a;font-size:12px;font-weight:900;box-shadow:0 10px 26px rgba(15,23,42,.18);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+body.sidebar-collapsed .app{grid-template-columns:0 1fr}
+body.sidebar-collapsed aside{opacity:0;pointer-events:none;overflow:hidden;padding:0;border-right:0}
+body.dark .map-size-toggle{background:rgba(0,0,0,.76);color:#f8fafc;border-color:rgba(255,255,255,.20)}
+}
+@media (max-width: 860px){
+main{height:58dvh;min-height:330px;transition:height .22s ease}
+body.map-large main{height:68dvh;min-height:390px}
+.topbar{display:flex;gap:8px;align-items:flex-start;justify-content:space-between;padding:8px 72px 8px max(10px,env(safe-area-inset-left))}
+.stats{flex:1;min-width:0;overflow-x:auto;flex-wrap:nowrap;margin-top:0;padding-bottom:1px;scrollbar-width:none}
+.stats::-webkit-scrollbar{display:none}
+.stat{flex:0 0 auto}
+.map-size-toggle{display:inline-flex;align-items:center;justify-content:center;position:absolute;left:max(10px,env(safe-area-inset-left));bottom:max(12px,env(safe-area-inset-bottom));z-index:700;min-width:86px;height:34px;padding:0 12px;border:1px solid rgba(15,23,42,.16);border-radius:999px;background:rgba(255,255,255,.86);color:#0f172a;font-size:12px;font-weight:900;box-shadow:0 10px 26px rgba(15,23,42,.18);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.legend{bottom:max(12px,env(safe-area-inset-bottom))}
+body.dark .map-size-toggle{background:rgba(0,0,0,.76);color:#f8fafc;border-color:rgba(255,255,255,.20)}
+}
+</style>
 </head>
 <body class="pre-entry">
 <button id="themeToggle" class="theme-fab" type="button" aria-label="切换暗黑模式">暗黑</button>
@@ -79,7 +106,7 @@ body.dark .limit-card{border-color:rgba(255,255,255,.18)}
   <div class="disclaimer"><b>免责声明</b><br>本页面由公开地图、社群资料与交通公开接口汇总而成，仅供出行和选店参考。机台数量、版本、营业状态、排队情况、票价、价格、路线时间与口岸办公安排可能临时变化；所有价格仅供参考，出发前请以机厅现场、官方交通/口岸信息为准。人气值用于表示公开社群热度，不代表实时排队人数。</div>
   <div class="source"><b>数据来源</b><br><span id="welcomeSources">BEMANI CN、Zenius-I-vanisher、MTR 官方 HRRoutes API、香港入境事务处口岸办公时间、公开巴士票价参考资料；价格仅供参考。</span><br><span id="welcomeGameCounts"></span></div>
   <div class="credit">@made by メタトロン and Codex and <span class="critical-perfect">CRITICAL PERFECT</span></div>
-  <div class="welcome-actions"><span id="appVersion" class="welcome-version">v1.2.1</span><button id="enterMap" class="primary-btn" type="button">进入地图</button></div>
+  <div class="welcome-actions"><span id="appVersion" class="welcome-version">v1.2.2</span><button id="enterMap" class="primary-btn" type="button">进入地图</button></div>
  </section>
 </div>
 <div class="app">
@@ -100,7 +127,7 @@ body.dark .limit-card{border-color:rgba(255,255,255,.18)}
 </aside>
 <main>
  <div class="topbar"><div class="title"><h1>香港音游CheckMaiWay <span class="rgb-bang">!</span><span class="rgb-bang">!</span><span class="rgb-bang">!</span><span class="rgb-bang">!</span></h1><p>筛选 maimaiDX、CHUNITHM、IIDX、SDVX，查看 Apple 地图链接，并估算从主要口岸出发的成人八达通交通费用。</p></div><div class="stats"><span class="stat" id="countStat"></span><span class="stat" id="favStat"></span><span class="stat">20 maimaiDX</span><span class="stat">13 CHUNITHM</span><span class="stat">4 IIDX</span><span class="stat">4 SDVX</span></div></div>
- <div class="mapwrap"><div id="map"></div><div class="legend"><div><span class="dot sega"></span>SEGA 系</div><div><span class="dot konami"></span>KONAMI 系</div><div><span class="dot mixed"></span>混合</div></div></div>
+ <div class="mapwrap"><div id="map"></div><button id="mapSizeToggle" class="map-size-toggle" type="button" aria-label="切换地图高度">地图</button><div class="legend"><div><span class="dot sega"></span>SEGA 系</div><div><span class="dot konami"></span>KONAMI 系</div><div><span class="dot mixed"></span>混合</div></div></div>
 </main>
 </div>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -111,7 +138,6 @@ Object.assign(DATA.origins.shenzhen_bay,{addon:0,note:'B2P 接驳至天水围一
 Object.assign(DATA.origins.heung_yuen_wai,{addon:0,note:'B7 接驳至上水/粉岭后转港铁；公交全程参考 HK$11.3，已并入总交通费；个别分段/优惠按现场拍卡结果为准，价格仅供参考。'});
 Object.assign(DATA.origins.hzmb,{addon:0,note:'B5 接驳至欣澳站后转港铁；公交全程参考 HK$6.1，已并入总交通费，价格仅供参考。'});
 Object.assign(DATA.origins.huanggang,{addon:0,note:'皇岗口岸公共运输交汇处乘 B10 至青衣站后转港铁；B10 全程参考 HK$12.1，价格仅供参考。'});
-Object.assign(DATA.origins.hzmb,{addon:0,note:'B5 接驳至欣澳站后转港铁；公交全程参考 HK$6.1，已并入总交通费，价格仅供参考。'});
 const FAV_KEY='hk_arcade_favorites_v1';
 const THEME_KEY='hk_arcade_theme_v1';
 const CLEARANCE_BUFFER=30;
@@ -128,9 +154,9 @@ hzmb:{close:null,closeText:'24小时',extraBack:20,extraText:'欣澳至港珠澳
 const AIRPORT_EXPRESS_META={frequency:'约8-14分钟一班',frequencySource:'MTR 机场快线时间表，2026-06-01 生效；实际以当天车站公布为准'};
 const SURFACE_FARE_UPDATED='2026-10-22';
 const WALK_ROUTE_FACTOR=1.25;
-const ORIGIN_SURFACE_LEGS={shenzhen_bay:[{mode:'bus',code:'B2P',name:'深圳湾口岸-天水围',fare:11.3,fareNote:'全程'}],heung_yuen_wai:[{mode:'bus',code:'B7',name:'香园围-上水/粉岭',fare:11.3,fareNote:'全程；分段/优惠按现场'}],hzmb:[{mode:'bus',code:'B5',name:'港珠澳大桥香港口岸-欣澳',fare:6.1,fareNote:'全程'}],huanggang:[{mode:'bus',code:'B10',name:'皇岗口岸-青衣站',fare:12.1,fareNote:'全程'}]};
+const ORIGIN_SURFACE_LEGS={shenzhen_bay:[{mode:'bus',code:'B2P',name:'深圳湾口岸-天水围',fare:11.3,fareNote:'全程；2026-10-22 核验'}],heung_yuen_wai:[{mode:'bus',code:'B7',name:'香园围-上水/粉岭',fare:11.3,fareNote:'全程；分段 $6.4；2026-10-22 核验'}],hzmb:[{mode:'bus',code:'B5',name:'港珠澳大桥香港口岸-欣澳',fare:6.1,fareNote:'全程；2026-10-22 核验'}],huanggang:[{mode:'bus',code:'B10',name:'皇岗口岸-青衣站',fare:12.1,fareNote:'全程；运输署 2026-10-22 资料'}]};
 let selected=null, query='', favoriteOnly=false, entered=false;
-const APP_VERSION='v1.2.1';
+const APP_VERSION='v1.2.2';
 const GAME_KEYS=['maimai','chuni','iidx','sdvx'];
 const LINE_META={AEL:{short:'AEL',name:'机场快线',color:'#00888A',ink:'#fff'},TCL:{short:'TCL',name:'东涌线',color:'#F7941D',ink:'#111827'},TWL:{short:'TWL',name:'荃湾线',color:'#E2231A',ink:'#fff'},KTL:{short:'KTL',name:'观塘线',color:'#00A040',ink:'#fff'},ISL:{short:'ISL',name:'港岛线',color:'#0072CE',ink:'#fff'},TKL:{short:'TKL',name:'将军澳线',color:'#7B2CBF',ink:'#fff'},EAL:{short:'EAL',name:'东铁线',color:'#53B7E8',ink:'#062333'},TML:{short:'TML',name:'屯马线',color:'#9A6B31',ink:'#fff'},SIL:{short:'SIL',name:'南港岛线',color:'#B5BD00',ink:'#17210a'},DRL:{short:'DRL',name:'迪士尼线',color:'#F06EB6',ink:'#2b1020'}};
 const LINE_ID_ALIAS={10:'AEL',11:'TWL',12:'KTL',13:'ISL',14:'TCL',15:'TKL',16:'DRL',17:'EAL',27:'SIL',28:'TML'};
@@ -138,6 +164,9 @@ const activeGames=new Set(GAME_KEYS);
 let favorites=new Set();
 try{favorites=new Set(JSON.parse(localStorage.getItem(FAV_KEY)||'[]'));}catch(e){favorites=new Set();}
 const map=L.map('map').setView([22.34,114.16],11);
+const MAP_MODE_KEY='hk_arcade_map_mode_v1';const SIDEBAR_MODE_KEY='hk_arcade_sidebar_mode_v1';let mapLarge=false;let sidebarCollapsed=false;try{mapLarge=localStorage.getItem(MAP_MODE_KEY)==='large';sidebarCollapsed=localStorage.getItem(SIDEBAR_MODE_KEY)==='collapsed';}catch(e){}
+function applyMapSize(){const compact=isCompactViewport();document.body.classList.toggle('map-large',mapLarge&&compact);document.body.classList.toggle('sidebar-collapsed',sidebarCollapsed&&!compact);const b=document.getElementById('mapSizeToggle');if(b)b.textContent=compact?(mapLarge?'收起地图':'展开地图'):(sidebarCollapsed?'显示侧栏':'收起侧栏');setTimeout(()=>map.invalidateSize(),80);}
+applyMapSize();
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; OpenStreetMap'}).addTo(map);
 const markers=new Map();
 let selectionMarker=null;
@@ -283,7 +312,7 @@ function renderRoute(){
 }
 function selectArcade(id,pan){selected=id;pendingCardScroll=true;const d=document.getElementById('destination');if(d)d.value=id;renderList();renderRoute();const a=DATA.arcades.find(x=>x.id===id);updateSelectionMarker(a);if(pan&&a){let done=false;const afterMap=()=>{if(done)return;done=true;setTimeout(()=>{scrollSelectedCard();pendingCardScroll=false;},60);};map.once('moveend',afterMap);map.once('zoomend',afterMap);routeBounds?fitCurrentRoute():map.setView([a.lat,a.lng],15);setTimeout(afterMap,700);}}
 function renderControls(){document.querySelectorAll('[data-game]').forEach(b=>b.classList.toggle('active',activeGames.has(b.dataset.game)));const fav=document.querySelector('[data-action="favorites"]');if(fav)fav.classList.toggle('active',favoriteOnly);}
-document.addEventListener('click',e=>{const fav=e.target.closest('[data-fav]');if(fav){e.stopPropagation();toggleFavorite(fav.dataset.fav);return;}const game=e.target.closest('[data-game]');if(game){const key=game.dataset.game;if(allGamesActive()){activeGames.clear();activeGames.add(key);}else if(activeGames.has(key)){activeGames.delete(key);if(!activeGames.size)GAME_KEYS.forEach(g=>activeGames.add(g));}else{activeGames.add(key);}renderControls();renderMarkers();renderList();renderRoute();return;}const action=e.target.closest('[data-action]');if(action?.dataset.action==='all'){favoriteOnly=false;activeGames.clear();GAME_KEYS.forEach(g=>activeGames.add(g));renderControls();renderMarkers();renderList();renderRoute();return;}if(action?.dataset.action==='favorites'){favoriteOnly=!favoriteOnly;renderControls();renderMarkers();renderList();renderRoute();return;}});document.getElementById('themeToggle').onclick=toggleTheme;document.getElementById('search').oninput=e=>{query=e.target.value;renderMarkers();renderList();renderRoute();};
+document.addEventListener('click',e=>{const fav=e.target.closest('[data-fav]');if(fav){e.stopPropagation();toggleFavorite(fav.dataset.fav);return;}const game=e.target.closest('[data-game]');if(game){const key=game.dataset.game;if(allGamesActive()){activeGames.clear();activeGames.add(key);}else if(activeGames.has(key)){activeGames.delete(key);if(!activeGames.size)GAME_KEYS.forEach(g=>activeGames.add(g));}else{activeGames.add(key);}renderControls();renderMarkers();renderList();renderRoute();return;}const action=e.target.closest('[data-action]');if(action?.dataset.action==='all'){favoriteOnly=false;activeGames.clear();GAME_KEYS.forEach(g=>activeGames.add(g));renderControls();renderMarkers();renderList();renderRoute();return;}if(action?.dataset.action==='favorites'){favoriteOnly=!favoriteOnly;renderControls();renderMarkers();renderList();renderRoute();return;}});document.getElementById('mapSizeToggle').onclick=()=>{if(isCompactViewport()){mapLarge=!mapLarge;try{localStorage.setItem(MAP_MODE_KEY,mapLarge?'large':'list');}catch(e){}}else{sidebarCollapsed=!sidebarCollapsed;try{localStorage.setItem(SIDEBAR_MODE_KEY,sidebarCollapsed?'collapsed':'open');}catch(e){}}applyMapSize();};document.getElementById('themeToggle').onclick=toggleTheme;document.getElementById('search').oninput=e=>{query=e.target.value;renderMarkers();renderList();renderRoute();};
 map.on('moveend zoomend',()=>{if(entered)renderList();});
 applyTheme();renderWelcome();renderSelects();renderControls();renderMarkers();renderList();renderRoute();
 </script>
